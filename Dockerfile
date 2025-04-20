@@ -77,5 +77,9 @@ COPY init.sql /docker-entrypoint-initdb.d/
 
 EXPOSE 8283 5432 4317 4318
 
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["./letta/server/startup.sh"]
+#CMD ["./letta/server/startup.sh"]
